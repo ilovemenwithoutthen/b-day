@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit an Event</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Submit an Event</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="event.html">Notable Events</a></li>
+                <li><a href="submit.html">Submit an Event</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Share Your Event</h2>
+        <form id="event-form">
+            <input type="text" id="event-date" placeholder="Date (e.g., 2023-12-05)" required>
+            <input type="text" id="event-description" placeholder="Event Description" required>
+            <button type="submit">Submit Event</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Events on December 5th. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('event-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const date = document.getElementById('event-date').value;
+            const description = document.getElementById('event-description').value;
+
+            alert(`Event submitted: ${date} - ${description}`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
